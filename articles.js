@@ -22,6 +22,12 @@ function init() {
         el: '#list',
         data: {
             articles: articles
+        },
+        methods: {
+            displayArticle: function(index) {
+                articleInput.title = articles[index].title;
+                articleInput.body = articles[index].body;
+            }
         }
     });
 }
