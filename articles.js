@@ -5,7 +5,7 @@ var articles = [
 ]
 
 function init() {
-    articleInput = new Vue({
+    var articleInput = new Vue({
         el: '#input',
         data: {
             title: null,
