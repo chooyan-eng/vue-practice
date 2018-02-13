@@ -18,16 +18,24 @@ function init() {
         }
     });
 
-    var articleList = new Vue({
-        el: '#list',
-        data: {
-            articles: articles
-        },
+    var ArticleItem = {
+        props: ['article', 'index'],
+        template: '<a href="javascript:void(0)" @click="displayArticle(index)">{{ article.title }}</a>',
         methods: {
             displayArticle: function(index) {
                 articleInput.title = articles[index].title;
                 articleInput.body = articles[index].body;
             }
+        },
+    }
+
+    var articleList = new Vue({
+        el: '#list',
+        data: {
+            articles: articles
+        },
+        components: {
+            'article-item': ArticleItem
         }
     });
 }
