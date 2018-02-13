@@ -30,7 +30,9 @@
                 <h2>List of Posts</h2>
             </div>
             <ul>
-                <li><a href="./">{{ title }}</a></li>
+                <li v-for="article in articles">
+                    <a href="./">{{ article.title }}</a>
+                </li>
             </ul>
         </div>
     </div>
