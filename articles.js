@@ -5,6 +5,19 @@ var articles = [
 ]
 
 function init() {
+    articleInput = new Vue({
+        el: '#input',
+        data: {
+            title: null,
+            body: null
+        },
+        methods: {
+            submitArticle: function() {
+                articles.push({title: this.title, body: this.body});
+            }
+        }
+    });
+
     var articleList = new Vue({
         el: '#list',
         data: {
