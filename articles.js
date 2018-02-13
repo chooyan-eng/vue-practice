@@ -5,6 +5,8 @@ var articles = [
 ]
 
 function init() {
+    var bus = new Vue();
+
     var articleInput = new Vue({
         el: '#input',
         data: {
@@ -15,6 +17,12 @@ function init() {
             submitArticle: function() {
                 articles.push({title: this.title, body: this.body});
             }
+        },
+        created: function() {
+            bus.$on('item-selected', function(index) {
+                articleInput.title = articles[index].title;
+                articleInput.body = articles[index].body;
+            })
         }
     });
 
@@ -23,8 +31,7 @@ function init() {
         template: '<a href="javascript:void(0)" @click="displayArticle(index)">{{ article.title }}</a>',
         methods: {
             displayArticle: function(index) {
-                articleInput.title = articles[index].title;
-                articleInput.body = articles[index].body;
+                bus.$emit('item-selected', index);          
             }
         },
     }
