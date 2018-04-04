@@ -1,12 +1,37 @@
 <html>
 <head>
   <title>TEST OF GITHUB PAGES</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    function init() {
+      var links = new Vue({
+        el: '#links',
+        data: {
+          links: [
+            {"title": "test1", "url": "https://www.hasam.jp"},
+            {"title": "test1", "url": "https://www.hasam.jp"},
+            {"title": "test1", "url": "https://www.hasam.jp"},
+            {"title": "test1", "url": "https://www.hasam.jp"},
+            {"title": "test1", "url": "https://www.hasam.jp"}
+          ]
+        }
+      });
+    }
+  </script>
 </head>
 
 <body>
 <h1>hello github pages!</h1>
 <p>hello hello hello hello</p>
 
+<div id="links">
+  <ol>
+    <li v-for="link in links">
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    </li>
+  </ol>
+</div>
+  
 </body>
 
 </html>
