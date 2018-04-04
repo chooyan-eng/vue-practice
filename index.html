@@ -19,6 +19,7 @@
         },
         watch: {
           keyword: function(newKeyword, oldKeyword) {
+            alert(newKeyword);
             links.links = master.filter(page => page.includes(newKeyword));
           }
         }
