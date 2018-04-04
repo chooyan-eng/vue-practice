@@ -19,7 +19,7 @@
         },
         watch: {
           keyword: function(newKeyword, oldKeyword) {
-            links.links = master.filter(link -> link.indexOf(newKeyword) > -1);
+            links.links = master.filter(page -> page.includes(newKeyword));
           }
         }
       });
