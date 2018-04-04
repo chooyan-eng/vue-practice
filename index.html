@@ -30,22 +30,24 @@
     }
     .link {
       text-size: 16px;
+      margin-top: 4px;
     }
   </style>
 </head>
 
 <body onload="init()">
-<h1>hello github pages!</h1>
-<p>hello 2</p>
+  <h1>Kokuzeicho Simple Page Index</h1>
 
-<div id="links" class="page">
-  <ol>
-    <li v-for="link in links">
-      <p class="title">{{ link.title }}</p>
-      <p class="link"><a v-bind:href="link.url">{{ link.url }}</a></p>
-    </li>
-  </ol>
-</div>
+  <input type="text"></input>
+
+  <div id="links" class="page">
+    <ol>
+      <li v-for="link in links">
+        <p class="title">{{ link.title }}</p>
+        <p class="link"><a v-bind:href="link.url">{{ link.url }}</a></p>
+      </li>
+    </ol>
+  </div>
   
 </body>
 
