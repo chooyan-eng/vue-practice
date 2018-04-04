@@ -51,8 +51,10 @@
 <body onload="init()">
   <h1>Kokuzeicho Simple Page Index</h1>
 
-  <input type="text"></input>
-
+  <div id="search">
+    <input v-model="keyword">
+  </div>
+  
   <div id="links" class="page">
     <ol>
       <li v-for="link in links">
