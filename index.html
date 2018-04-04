@@ -18,9 +18,9 @@
           keyword: ''
         },
         watch: {
-          keywokd: function(newKeyword, oldKeyword) {
+          keyword: function(newKeyword, oldKeyword) {
             links.links = master.filter(link -> link.indexOf(newKeyword) > -1);
-          });
+          }
         }
       });
       var links = new Vue({
