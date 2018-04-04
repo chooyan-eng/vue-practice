@@ -3,17 +3,29 @@
   <title>TEST OF GITHUB PAGES</title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
-    function init() {
-      var links = new Vue({
-        el: '#links',
-        data: {
-          links: [
+    var master = [
             {"title": "test1", "url": "https://www.hasam.jp"},
             {"title": "test1", "url": "https://www.hasam.jp"},
             {"title": "test1", "url": "https://www.hasam.jp"},
             {"title": "test1", "url": "https://www.hasam.jp"},
             {"title": "test1", "url": "https://www.hasam.jp"}
-          ]
+          ];
+    
+    function init() {
+      var search = new Vue({
+        el: '#search',
+        data: {
+          keyword: ''
+        },
+        watch: {
+          keywokd: function(newKeyword, oldKeyword) {
+            links.links = master.filter(link -> link.indexOf(newKeyword) > -1);
+          });
+      });
+      var links = new Vue({
+        el: '#links',
+        data: {
+          links: master
         }
       });
     }
